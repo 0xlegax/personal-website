@@ -71,13 +71,3 @@ Visitors can:
 - [Vercel](https://vercel.com/)
 
 ---
-
-## ⚙️ Getting Started
-
-### Prerequisites
-
-Ensure you have these installed:
-
-```bash
-node -v   # Recommended: v18.x+
-npm -v    # Or yarn
