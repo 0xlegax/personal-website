@@ -1,148 +1,54 @@
+# React + TypeScript + Vite
 
-# 🚀 Noah Favreau's Portfolio Website
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-**Live Demo:** [noahfavreau.me](example.com)
+Currently, two official plugins are available:
 
-Welcome to the source code of my personal portfolio website. This site showcases my work, personality, and creativity—all in one responsive and dynamic experience.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## Expanding the ESLint configuration
 
-## 📖 Table of Contents
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- [About The Project](#about-the-project)
-- [✨ Key Features](#✨-key-features)
-- [🛠️ Built With](#🛠️-built-with)
-- [⚙️ Getting Started](#⚙️-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [📜 Available Scripts](#📜-available-scripts)
-- [🚀 Deployment](#🚀-deployment)
-- [🤝 Contributing](#🤝-contributing)
-- [📄 License](#📄-license)
-- [📧 Contact](#📧-contact)
-- [🎉 Acknowledgements](#🎉-acknowledgements)
-
----
-
-## 📍 About The Project
-
-This is my personal portfolio built with **React**, **Tailwind CSS**, and **Framer Motion**. It serves as a hub for everything about me as a creative technologist—my projects, skills, personality, and even an **AI chatbot version of myself**.
-
-Visitors can:
-- Explore my web and creative projects
-- Interact with a custom-trained AI to ask me questions
-- See what I’m currently working on or learning
-- View some of my favorite books, games, and interests
-
----
-
-## ✨ Key Features
-
-- **Responsive Design** – Mobile-first, seamless experience across devices
-- **Project Showcase** – Cards with live previews, GitHub links, and stack info
-- **About Me** – Personal bio, skills, and fun facts
-- **AI Chatbot of Me** – Ask "me" anything using a custom LLM integration
-- **Now Page** – Shows what I'm currently learning or doing
-- **Fun Extras Page** – My favorite music, books, games, and more
-- **Animated UI** – Transitions and motion design using Framer Motion
-- **Contact Form** – Integrated with EmailJS for easy reach
-
----
-
-## 🛠️ Built With
-
-### 🔧 Frontend
-
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Router](https://reactrouter.com/)
-- [Vite](https://vitejs.dev/)
-
-### ⚙️ Dev Tools
-
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/)
-- [Git & GitHub](https://git-scm.com/)
-
-### ☁️ Deployment
-
-- [Vercel](https://vercel.com/)
-
----
-
-## ⚙️ Getting Started
-
-### Prerequisites
-
-Ensure you have these installed:
-
-```bash
-node -v   # Recommended: v18.x+
-npm -v    # Or yarn
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-### Installation
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. Clone the repository:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-```bash
-git clone https://github.com/yourusername/your-portfolio-repo.git
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
 ```
-
-2. Navigate into the project folder:
-
-```bash
-cd your-portfolio-repo
-```
-
-3. Install dependencies:
-
-```bash
-npm install
-# or
-yarn install
-```
-
----
-
-## 📜 Available Scripts
-
-```bash
-npm run dev      # Start development server (Vite)
-npm run build    # Build production version
-npm run lint     # Lint codebase
-```
-
----
-
-## 🚀 Deployment
-
-This project is deployed using **Vercel**:
-
-1. Push to your GitHub repo
-2. Connect repo to [Vercel](https://vercel.com/)
-3. Configure:
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-
----
-
-## 🤝 Contributing
-
-While this is a personal project, suggestions and feedback are welcome!
-
-1. Fork the repo
-2. Create a new branch: `git checkout -b feature/my-feature`
-3. Make your changes and commit: `git commit -m 'Add feature'`
-4. Push and open a Pull Request
-
----
-
-## 📄 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
-
----
