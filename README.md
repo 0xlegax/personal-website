@@ -1,8 +1,6 @@
 
 # 🚀 Noah Favreau's Portfolio Website
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 **Live Demo:** [noahfavreau.me](example.com)
 
 Welcome to the source code of my personal portfolio website. This site showcases my work, personality, and creativity—all in one responsive and dynamic experience.
