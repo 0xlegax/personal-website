@@ -1,31 +1,31 @@
-# 🚀 Noah's Portfolio Website
+# noahfavreau.com
 
-### **Live Demo:** [noahfavreau.com](example.com)
+A personal portfolio website for Noah Favreau, featuring unique sections and easter eggs.
 
-Welcome to the source code of my personal portfolio website. This site showcases my work, personality, and creativity—all in one responsive and dynamic experience.
+**Author:** Noah Favreau
 
----
+## Live Site
 
-## 🛠️ Built With
+Visit the live site: [noahfavreau.com](https://noahfavreau.com)
 
-### 🔧 Frontend
+## Tech Stack
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Router](https://reactrouter.com/)
-- [Vite](https://vitejs.dev/)
+* **Frontend:** React, TypeScript
+* **Build Tool:** Vite (with SWC)
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
 
-### ⚙️ Dev Tools
+## Running Locally (Optional)
 
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
-- [Prettier](https://prettier.io/)
-- [ESLint](https://eslint.org/)
-- [Git & GitHub](https://git-scm.com/)
+If you wish to run a local copy:
 
-### ☁️ Deployment
+```bash
+# Clone the repository
+git clone https://github.com/0xlegax/personal-website.git
+cd personal-website
 
-- [Vercel](https://vercel.com/)
+# Install dependencies
+npm install
 
----
+# Start the development server
+npm run dev
